@@ -24,7 +24,7 @@
             qteMovimentos--;
         }
 
-        public bool existeMovimenosPossiveis() {
+        public bool existeMovimentosPossiveis() {
             bool[,] mat = movimentosPossiveis();
             for(int i=0; i<tab.linhas; i++) {
                 for (int j=0; j<tab.colunas; j++) {

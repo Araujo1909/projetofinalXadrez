@@ -8,12 +8,10 @@ namespace trabalhofinal
     {
         static void Main(string[] args)
         {
-            try
-            {
+            try {
                 PartidaDeXadrez partida = new PartidaDeXadrez();
 
-                while (!partida.terminada)
-                {
+                while (!partida.terminada) {
 
                     try {
                         Console.Clear();
@@ -23,7 +21,6 @@ namespace trabalhofinal
                         Console.Write("Origem: ");
                         Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
                         partida.validarPosicaoDeOrigem(origem);
-
 
                         bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
@@ -37,16 +34,16 @@ namespace trabalhofinal
 
                         partida.realizaJogada(origem, destino);
                     }
-                    catch(TabuleiroException e) {
+                    catch (TabuleiroException e) {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
                 }
-
-                Tela.imprimirTabuleiro(partida.tab);
+                
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
-            catch (TabuleiroException e)
-            {
+            catch (TabuleiroException e) {
                 Console.WriteLine(e.Message);
             }
 
